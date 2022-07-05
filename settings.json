@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "book allocation problem": "cpp",
+        "iostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}
