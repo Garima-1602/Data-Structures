@@ -1,14 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
-void printSum(int arr[][4],int row,int col)
+int printSum(int arr[][4],int row,int col)
 {
+    int maxi;
     for(int row=0; row<3; row++) {
         int sum=0;
+        
         for(int col=0; col<4; col++) {
             sum+=arr[row][col];
+            
         }
         cout<<sum<<" ";
+         maxi=max(sum);
     }
+   
+    return maxi;
 
     
 }
