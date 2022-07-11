@@ -1,22 +1,26 @@
 #include<bits/stdc++.h>
 using namespace std;
-int printSum(int arr[][4],int row,int col)
+int printMaxRowSum(int arr[][4],int row,int col)
 {
-    int maxi;
+    int maxi=INT_MIN; //to find maximum sum
+    int rowIndex=-1; //to return the index
     for(int row=0; row<3; row++) {
         int sum=0;
         
         for(int col=0; col<4; col++) {
             sum+=arr[row][col];
+            if(sum>maxi)
+            {
+                maxi=sum;
+                rowIndex=row;
+            }
             
         }
-        cout<<sum<<" ";
-         maxi=max(sum);
+       
+       
     }
-   
-    return maxi;
-
-    
+      cout<<"Maximum sum is"<<" "<<maxi<<endl; 
+    return rowIndex;
 }
 int main()
 {
@@ -40,7 +44,8 @@ int main()
         }
         cout << endl;
     }
-    cout<<"sum"<<endl;
-   printSum(arr,3,4);
+    int ans=printMaxRowSum(arr,3,4);
+    cout<<"The row which has maximum sum is  "<<ans<<endl;
+  
     return 0;
 }
