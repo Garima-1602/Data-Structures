@@ -2,26 +2,30 @@
 using namespace std;
 int main()
 {
-    int n;
-    cin>>n;
-    int **arr=new int*[n];
+    //now to take different values of row and col 3*4
+    int row;
+    cin>>row;
+    int col;
+    cin>>col;
+
+    int **arr=new int*[row];
     //creation
-    for(int i=0;i<n;i++)
+    for(int i=0;i<row;i++)
     {
-        arr[i]=new int[n];
+        arr[i]=new int[col];
     }
     //taking input
-    for(int i=0;i<n;i++)
+    for(int i=0;i<row;i++)
     {
-        for(int j=0;j<n;j++)
+        for(int j=0;j<col;j++)
         {
             cin>>arr[i][j];
         }
     }cout<<endl;
     //printing 
-     for(int i=0;i<n;i++)
+     for(int i=0;i<row;i++)
     {
-        for(int j=0;j<n;j++)
+        for(int j=0;j<col;j++)
         {
             cout<<arr[i][j]<<" ";
         }cout<<endl;
