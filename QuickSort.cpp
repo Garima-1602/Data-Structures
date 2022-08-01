@@ -26,13 +26,12 @@ int partition(int arr[],int s,int e)
         }
         while(arr[j]>pivot)
         {
-            j++;
+            j--;
         }
         if(i<pivotIndex && j>pivotIndex)
         {
-            swap(arr[i],arr[j])
-            i++;
-            j--;
+            swap(arr[i++],arr[j--]);
+            
         }
     }
     return pivotIndex;
@@ -55,8 +54,8 @@ void quickSort(int arr[],int s,int e)
 }
 int main()
 {
-    int arr[5]={5,2,8,1,9};
-    int n =5;
+    int arr[9]={5,2,8,1,9,9,3,6,9};
+    int n =9;
 
     quickSort(arr,0,n-1);
     //printing elements after sorting 
