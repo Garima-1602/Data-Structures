@@ -6,6 +6,10 @@ class Hero{
 public:
 int health;
 char level;
+Hero()//constructor
+{
+   cout<<"Constructor called!"<<endl;
+}
 void print(){
     cout<<level<<endl;
 }
@@ -29,8 +33,9 @@ void setLevel(char ch)
 };
 int main()
 {
-    //creation of object
+    //creation of object statically
     Hero h1;
+    /*
     //h1.health=70;
     //to set value
     h1.setHealth(60);
@@ -46,7 +51,7 @@ int main()
     cout<<"Health : "<<(*b).getHealth()<<endl;
 
      cout<<"Level: "<<b->level<<endl;
-    cout<<"Health : "<<b->getHealth()<<endl;
+    cout<<"Health : "<<b->getHealth()<<endl; */
 
     return 0;
 }
