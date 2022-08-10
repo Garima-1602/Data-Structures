@@ -40,6 +40,8 @@ int main()
     cout<<"Level: "<<h1.level<<endl;
     //dynamic allocation
     Hero *b=new Hero;
+    b->setHealth(70);
+    b->setLevel('A');
     cout<<"Level: "<<(*b).level<<endl;
     cout<<"Health : "<<(*b).getHealth()<<endl;
 
