@@ -10,6 +10,11 @@ Hero()//constructor
 {
    cout<<"Constructor called!"<<endl;
 }
+Hero(int health)
+{
+    cout<<"this->"<<this<<endl;
+    this->health=health;
+}
 void print(){
     cout<<level<<endl;
 }
@@ -35,6 +40,8 @@ int main()
 {
     //creation of object statically
     Hero h1;
+    Hero *b=new Hero;
+    //dynamically
     /*
     //h1.health=70;
     //to set value
