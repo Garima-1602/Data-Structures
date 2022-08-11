@@ -3,12 +3,16 @@ using namespace std;
 class Hero{
 //properties
 //by deafault these are private
-public:
+private:
 int health;
+public:
+char *name;
 char level;
+static int timeToComplete;
 Hero()//constructor
 {
    cout<<"Constructor called!"<<endl;
+   name=new char[100];
 }
 //parametrised 
 Hero(int health)
@@ -29,6 +33,7 @@ Hero(Hero& temp){
     this->level=temp.level;
 }
 void print(){
+    cout<<"Name: "<<this->name<<endl;
     cout<<"health: "<<this->health<<endl;
     cout<<"level:"<<this->level<<endl;
     }
@@ -49,14 +54,21 @@ void setLevel(char ch)
 {
     level=ch;
 }
+void setName(char name[])
+{
+    strcpy(this->name,name);
+}
 };
+int Hero::timeToComplete=12;
 int main()
 {
-    Hero suresh(70,'C');
-    suresh.print();
-    //copy constructor
-    Hero R(suresh);
-    R.print();
+    Hero hero1;
+    hero1.setHealth(12);
+    hero1.setLevel('D');
+    char name[7]="Garima";
+    hero1.setName(name);
+    hero1.print();
+    cout<<Hero::timeToComplete<<endl;
     //creation of object statically
    // Hero h1(10);
     //Hero *b=new Hero;
