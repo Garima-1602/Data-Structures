@@ -16,15 +16,21 @@ Hero(int health)
    // cout<<"this->"<<this<<endl;
     this->health=health;
 }
+
 Hero(int health,char level)
 {
     this->level=level;
     this->health=health;
 }
-
+//creating oqn copy constructor
+Hero(Hero& temp){
+//copy constructor called
+    this->health=temp.health;
+    this->level=temp.level;
+}
 void print(){
-    cout<<health<<this->health<<endl;
-    cout<<level<<this->level<<endl;
+    cout<<"health: "<<this->health<<endl;
+    cout<<"level:"<<this->level<<endl;
     }
 //getter
 int getHealth()
