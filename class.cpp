@@ -23,8 +23,9 @@ Hero(int health,char level)
 }
 
 void print(){
-    cout<<level<<endl;
-}
+    cout<<health<<this->health<<endl;
+    cout<<level<<this->level<<endl;
+    }
 //getter
 int getHealth()
 {
@@ -45,9 +46,14 @@ void setLevel(char ch)
 };
 int main()
 {
+    Hero suresh(70,'C');
+    suresh.print();
+    //copy constructor
+    Hero R(suresh);
+    R.print();
     //creation of object statically
-    Hero h1(10);
-    Hero *b=new Hero;
+   // Hero h1(10);
+    //Hero *b=new Hero;
     //dynamically
     /*
     //h1.health=70;
@@ -66,7 +72,7 @@ int main()
 
      cout<<"Level: "<<b->level<<endl;
     cout<<"Health : "<<b->getHealth()<<endl; */
-    Hero temp(22,'B');
-    temp.print();
+    //Hero temp(22,'B');
+    //temp.print();
     return 0;
 }
