@@ -58,8 +58,13 @@ void setName(char name[])
 {
     strcpy(this->name,name);
 }
+static int random()
+{
+    //throws error->cout<<this->health<<endl;
+    return timeToComplete;
+}
 };
-int Hero::timeToComplete=12;
+int Hero::timeToComplete=10;
 int main()
 {
     Hero hero1;
@@ -69,6 +74,7 @@ int main()
     hero1.setName(name);
     hero1.print();
     cout<<Hero::timeToComplete<<endl;
+    cout<<Hero::random()<<endl;
     //creation of object statically
    // Hero h1(10);
     //Hero *b=new Hero;
