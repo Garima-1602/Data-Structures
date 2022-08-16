@@ -12,8 +12,11 @@ class Animal{
 class Dog:public Animal{
 
 };
+class GermanShepherd:public Dog{
+
+};
 int main(){
-    Dog d;
+    GermanShepherd d;
     d.speak();
     return 0;
 }
