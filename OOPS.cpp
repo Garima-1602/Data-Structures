@@ -32,6 +32,8 @@ int main()
     cout<<ob1.weight<<endl;
     cout<<ob1.height<<endl;
     cout<<ob1.color<<endl;
+    ob1.setWeight(40);
+    cout<<ob1.weight<<endl;
     ob1.sleep();
    return 0;
 }
