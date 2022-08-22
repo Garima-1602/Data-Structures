@@ -80,5 +80,8 @@ int main()
  print(head);
  insertAtPosition(tail,head,4,22);
  print(head);
+ //to verify tail and head
+ cout<<"head "<<head->data<<endl;
+ cout<<"tail "<<tail->data<<endl;
     return 0;
 }
