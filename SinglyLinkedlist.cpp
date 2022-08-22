@@ -18,6 +18,27 @@ void insertAtHead(Node* &head,int d){
     temp->next=head;
     head=temp;
 }
+void insertAtTail(Node* &tail,int d)
+{
+    Node* temp=new Node(d);
+    tail->next=temp;
+   // tail=tail->next;
+   tail=temp;
+}
+void insertAtPosition(Node* &head,int position,int d)
+{
+    Node* temp=head;
+    int cnt=1;
+    while(cnt<position-1)
+    {
+        temp=temp->next;
+        cnt++;
+    }
+    //creating node for d or inserting at given position
+    Node *nodeToInsert=new Node(d);
+    nodeToInsert->next=temp->next;
+    temp->next=nodeToInsert;
+}
 //how to traverse linked list
 void print(Node* &head)
 {
@@ -38,10 +59,13 @@ int main()
    
     //head pointed to node1
     Node *head=node1;
+    Node* tail=node1;
     print(head);
-    insertAtHead(head,12);
+    insertAtTail(tail,12);
     print(head);
- insertAtHead(head,15);
+ insertAtTail(tail,15);
+ print(head);
+ insertAtPosition(head,3,22);
  print(head);
     return 0;
 }
