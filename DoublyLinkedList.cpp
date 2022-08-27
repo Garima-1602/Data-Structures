@@ -14,6 +14,7 @@ class Node{
         this->next=NULL;
     }
 };
+//calculating the length of  linked list
 int getLength(Node* head){
     int len=0;
     Node* temp=head;
@@ -22,8 +23,10 @@ int getLength(Node* head){
         len++;
         temp=temp->next;
     }
+    
     return len;
 }
+//Traversing 
 void print(Node* head)
 {
     Node* temp=head;
@@ -34,10 +37,19 @@ void print(Node* head)
     }
     cout<<endl;
 }
+void insertAtHead(Node* &head,int d)
+{
+    Node* temp=new Node(d);//creating new node to insert at head
+    temp->next=head;
+    head->prev=temp;
+    head=temp;
+}
 int main(){
     Node* node1=new Node(10);
     Node* head=node1;
     print(head);
-    cout<<"Length "<<getLength(head);
+    cout<<"Length "<<getLength(head)<<endl;
+    insertAtHead(head,11);
+    print(head);
     return 0;
 }
