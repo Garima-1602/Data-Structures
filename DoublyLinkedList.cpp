@@ -51,5 +51,9 @@ int main(){
     cout<<"Length "<<getLength(head)<<endl;
     insertAtHead(head,11);
     print(head);
+    insertAtHead(head,13);
+    print(head);
+    insertAtHead(head,8);
+    print(head);
     return 0;
 }
