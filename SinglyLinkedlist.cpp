@@ -79,7 +79,7 @@ void deleteNode(int position,Node* &head)
           Node* curr=head;
           Node* prev=NULL;
           int cnt=1;
-          while(cnt<=position)
+          while(cnt<position)
           {
             prev=curr;
             curr=curr->next;
