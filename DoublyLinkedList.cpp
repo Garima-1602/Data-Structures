@@ -13,6 +13,15 @@ class Node{
         this->prev=NULL;
         this->next=NULL;
     }
+    ~Node(){
+        int val=this->data;
+        if(next!=NULL)
+        {
+            delete next;
+            next=NULL;
+        }
+        cout<<"Memory is free for "<<val<<endl;
+    }
 };
 //calculating the length of  linked list
 int getLength(Node* head){
@@ -79,6 +88,34 @@ void insertAtPosition(Node* &tail,Node* &head,int position,int d)
     temp->next=nodeToInsert;
     nodeToInsert->prev=temp;
 }
+void deleteNode(int position,Node* &head)
+{
+    //deleting first or start node
+    if(position==1)
+    {
+        Node* temp=head;
+        temp->next->prev=NULL;
+        head=temp->next;
+        temp->next=NULL;
+        delete temp;
+    }
+    else{
+        //deleting any middle node or last node
+        Node* curr=head;
+        Node* prev=NULL;
+        int cnt=1;
+        while(cnt<position)
+        {
+            prev=curr;
+            curr=curr->next;
+            cnt++;
+        }
+        curr->prev=NULL;
+        prev->next=curr->next;
+        curr->next=NULL;
+        delete curr;
+    }
+}
 int main(){
     Node* node1=new Node(10);
     Node* head=node1;
@@ -94,6 +131,8 @@ int main(){
     insertAtTail(tail,25);
     print(head);
     insertAtPosition(tail,head,2,100);
+    print(head);
+    deleteNode(6,head);
     print(head);
     return 0;
 }
