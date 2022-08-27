@@ -19,14 +19,37 @@ class Node{
         cout<<"Memory is free for "<<val<<endl;
      }
 };
-void insertNode(Node* &tails,int element,int d)
+void deleteNode(Node* &tail,int value)
+{
+    //empty list
+    if(tail==NULL)
+    {
+        cout<<"List is empty,please check again"<<endl;
+        return;
+    }
+    else{
+        //non-empty
+        //assuming that value is present in linked list
+        Node* prev=tail;
+        Node* curr=prev->next;
+        while(curr->data!=value){
+            prev=curr;
+            curr=curr->next;
+        }
+        prev->next=curr->next;
+        curr->next=NULL;
+        delete curr;
+
+    }
+}
+void insertNode(Node* &tail,int element,int d)
 {
     //assuming that the element is present in the list
     if(tail==NULL)
     {
         Node* newNode=new Node(d);
         tail=newNode;
-        newnode->next=newNode;
+        newNode->next=newNode;
     }
     else{
         //non empty list
@@ -50,6 +73,7 @@ void print(Node* tail)
     }while(tail!=temp);
     cout<<endl;
 }
+
 int main()
 {
     Node* tail=NULL;
@@ -67,6 +91,8 @@ int main()
     insertNode(tail,9,10);
     print(tail);
     insertNode(tail,3,4);
+    print(tail);
+    deleteNode(tail,3);
     print(tail);
     return 0;
 }
