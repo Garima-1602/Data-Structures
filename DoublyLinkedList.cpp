@@ -14,6 +14,16 @@ class Node{
         this->next=NULL;
     }
 };
+int getLength(Node* head){
+    int len=0;
+    Node* temp=head;
+    while(temp!=NULL)
+    {
+        len++;
+        temp=temp->next;
+    }
+    return len;
+}
 void print(Node* head)
 {
     Node* temp=head;
@@ -28,5 +38,6 @@ int main(){
     Node* node1=new Node(10);
     Node* head=node1;
     print(head);
+    cout<<"Length "<<getLength(head);
     return 0;
 }
