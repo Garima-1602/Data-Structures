@@ -37,6 +37,14 @@ void deleteNode(Node* &tail,int value)
             curr=curr->next;
         }
         prev->next=curr->next;
+        if(curr==prev)
+        {
+            tail=NULL;
+        }
+        else if(tail==curr)
+        {
+            tail=prev;
+        }
         curr->next=NULL;
         delete curr;
 
@@ -67,13 +75,57 @@ void insertNode(Node* &tail,int element,int d)
 void print(Node* tail)
 {
     Node* temp=tail;
+    if(tail==NULL)
+    {
+        cout<<"list is empty"<<endl;
+        return;
+    }
     do{
           cout<<tail->data<<" ";
           tail=tail->next;
     }while(tail!=temp);
     cout<<endl;
 }
-
+bool isCircular(Node* head)
+{
+    //empty list
+    if(head==NULL)
+    {
+        return true;
+    }
+    //one node
+    Node* temp=head->next;
+    while(temp!=NULL && temp!=head)
+    {
+        temp=temp->next;
+    }
+    
+    if(temp==head)
+    {
+        return true;
+    }
+    return false;
+}
+bool detectLoop(Node* head)
+{
+    if(head==NULL)
+    {
+        return false;
+    }
+    map<Node*,bool>visited;
+    Node* temp=head;
+    while(temp!=NULL)
+    {
+        //cycle present
+        if(visited[temp]==true)
+        {
+            return 1;
+        }
+        visited[temp]=true;
+        temp=temp->next;
+    }
+    return 0;
+}
 int main()
 {
     Node* tail=NULL;
@@ -92,7 +144,14 @@ int main()
     print(tail);
     insertNode(tail,3,4);
     print(tail);
-    deleteNode(tail,3);
-    print(tail);
+    //deleteNode(tail,3);
+    //print(tail);
+    if(isCircular(tail)){
+        cout<<"Linked list is circular"<<endl;
+    }
+    else
+    {
+        cout<<"Not circular"<<endl;
+    }
     return 0;
 }
