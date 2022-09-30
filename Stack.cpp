@@ -11,5 +11,13 @@ int main()
     s.pop();
     //check top element
     cout<<"Element present at top is : "<<s.top()<<endl;
+    //to check stack is empty or not
+    if(s.empty())
+    {
+        cout<<"Stack is empty"<<endl;
+    }
+    else{
+        cout<<"Stack is not empty"<<endl;
+    }
     return 0;
 }
