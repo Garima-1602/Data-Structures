@@ -8,7 +8,7 @@ int main()
     cout<<q.front()<<endl;
     cout<<q.back()<<endl;
     q.pop_front();//den 12 will be remove
- cout<<q.front()<<endl;
+    cout<<q.front()<<endl;
     cout<<q.back()<<endl;
     return 0;
 
