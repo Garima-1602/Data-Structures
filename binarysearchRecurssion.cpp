@@ -5,7 +5,7 @@ bool binary(int *arr,int start,int end,int key)
     //base case
     if(start>end)
       return false;
-      int mid=start+(end-start)/2;
+    int mid=start+(end-start)/2;
     if(arr[mid]==key)
     {
          return true;
@@ -21,8 +21,8 @@ bool binary(int *arr,int start,int end,int key)
 int main()
 {
    int arr[5]={2,4,9,10,15};
-   int size=55;
-   int key=10;
+   int size=5;
+   int key=11;
    bool ans=binary(arr,0,size-1,key);
    if(ans)
     {
